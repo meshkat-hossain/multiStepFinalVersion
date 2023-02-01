@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  /* ### Primary */
+
+  --MarineBlue: hsl(213, 96%, 18%);
+  --PurplishBlue: hsl(243, 100%, 62%);
+  --PastelBlue: hsl(228, 100%, 84%);
+  --LightBlue: hsl(206, 94%, 87%);
+  --StrawberryRed: hsl(354, 84%, 57%);
+
+  /* ### Neutral */
+
+  --CoolGray: hsl(231, 11%, 63%);
+  --LightGray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+
+  /* SIZES */
+  --destktopScreen: 700px;
+}
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--Magnolia);
+}
+.step-header{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 30px;
+  background-image: url("./images/bg-sidebar-mobile.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.step-container {
+  display: flex;
+  font-family: ubuntu;
+}
+
+.step-header-container {
+  /* border-radius: 50%; */
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.step-id {  
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--White);
+  border-radius: 50%;
+  border: 1px solid var(--White);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+}
+.active-step {
+  background-color: var(--PastelBlue);
+  border: 1px solid var(--PastelBlue);
+}
+
+.active-step .step-id {
+  color: var(--MarineBlue);
+}
+
+.step-and-name {
+  display: none;
+}
+
+.displays {
+  width: 90%;
+  max-width: 450px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 5px var(--PastelBlue);
+}
+.personal-info-container {
+  width: 100%;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  padding: 35px 15px 20px 15px;
+  font-family: ubuntu;
+  border-radius: 10px;
+}
+.personal-info-header {
+  margin-bottom: 10px;
+  color: var(--MarineBlue);
+}
+
+.info {
+  font-size: 17px;
+  /* letter-spacing: 0.5px; */
+  line-height: 24px;
+  color: var(--CoolGray);
+  margin-bottom: 20px;
+}
+.label-and-error {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.personal-info-container label {
+  color: var(--MarineBlue);
+  margin-bottom: 4px;
+}
+
+.error {
+  color: var(--StrawberryRed);
+  /* display: none; */
+}
+.personal-info-container input {
+  padding: 8px 12px;
+  font-size: 17px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--LightGray);
+  position: relative;
+  overflow: visible;
+}
+.personal-info-container input:focus {
+  outline: 1px solid var(--CoolGray);
+}
+.personal-info-container input::placeholder {
+  color: var(--CoolGray);
+  font-weight: 500;
+}
+.next-and-back {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--White);
+  padding: 15px;
+}
+.next-and-back button {
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.hide-next-and-back{
+  display: none;
+}
+.back-btn {
+  border: none;
+  color: var(--CoolGray);
+  background: none;
+}
+.back-btn:hover {
+  color: var(--MarineBlue);
+}
+.hide-back-btn{
+  visibility: hidden;
+}
+.next-btn {
+  padding: 10px 15px;
+  background-color: var(--MarineBlue);
+  border: none;
+  color: var(--LightGray);
+  border-radius: 5px;
+}
+
+.next-btn:hover {
+  opacity: 0.7;
+}
+.change-next-btn {
+  background-color: var(--PurplishBlue);
+  padding: 10px 20px;
+}
+
+
+
+
+@media screen and (min-width: 700px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Magnolia);
+  }
+  .App{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--White);
+    width: 90vw;
+    max-width: 900px;
+    height: 66vh;
+    position: relative;
+    top: 100px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px var(--PastelBlue);
+    padding: 10px;
+  }
+  .steps-header {
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    background: url("./images/bg-sidebar-desktop.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .step-header-container {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .step-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .step-and-name {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    color: var(--White);
+    font-size: 15px;
+  }
+  .step-no {
+    font-weight: 100;
+  }
+
+  .step-name {
+    font-weight: 600;
+  }
+  .displays {
+    position: unset;
+    /* background-color: greenyellow; */
+    width: 60%;
+    box-shadow: none;
+  }
+
+}
